@@ -1,0 +1,15 @@
+.AddProduct > form{
+	width: 250px;
+}
+
+.AddProduct > h2{
+    text-align: center;
+}
+
+.AddProduct input , 
+.AddProduct button{
+    width : 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
