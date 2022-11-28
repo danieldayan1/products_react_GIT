@@ -4,6 +4,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { useState , useEffect } from "react";
 import productService from "../../../Services/ProductsService";
 import { NavLink } from "react-router-dom";
+import Loading from "../../SharedArea/Loading/Loading";
 
 function ProductsList(): JSX.Element {
 
@@ -18,6 +19,9 @@ function ProductsList(): JSX.Element {
 
     return (
         <div className="ProductsList">
+
+            {products.length === 0 && <Loading />}
+
             <NavLink to ="/products/new">👌 הוספת פריט</NavLink>
             <br/>
 			<div className="row row-cols-1 row-cols-md-3 g-4">

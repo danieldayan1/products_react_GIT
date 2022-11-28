@@ -1,0 +1,21 @@
+.EditProduct > form{
+	width: 350px;
+}
+
+.EditProduct > h2{
+    text-align: center;
+}
+
+.EditProduct input , 
+.EditProduct button{
+    width : 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.EditProduct img{
+   padding-bottom: 10px; 
+   margin-left: 25px;
+   border-radius: 75%;
+}
+

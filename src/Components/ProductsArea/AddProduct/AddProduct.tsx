@@ -53,6 +53,9 @@ function AddProduct(): JSX.Element {
                     <label>stock</label>
                 </div>
 
+                <div className="input-group mb-3">
+                    <input type="file" className="form-control" id="inputGroupFile101   " {...register("image")}/>
+                </div>
 
                 <button className="btn btn-primary">Add</button>
             </form>

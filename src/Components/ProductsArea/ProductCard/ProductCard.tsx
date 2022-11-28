@@ -1,7 +1,6 @@
 import "./ProductCard.css";
 import ProductModel from "../../../Models/ProductModel";
 import { NavLink } from "react-router-dom";
-import productImagesUrl from "../../../Utils/Config"
 import config from "../../../Utils/Config"
 
 interface ProductCardProps{

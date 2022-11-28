@@ -3,7 +3,7 @@ class Config {
     public supportPhone = "031234567";
     public supportPage = "";
 
-    public productsUrl = "http://localhost:3030/api/products"; 
+    public productsUrl = "http://localhost:3030/api/products/delayed/"; 
     public productImagesUrl = "http://localhost:3030/api/products/images/";
 }
 

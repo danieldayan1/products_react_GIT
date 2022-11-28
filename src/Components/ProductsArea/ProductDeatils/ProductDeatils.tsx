@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDeatils.css";
 import config from "../../../Utils/Config";
 import productService from "../../../Services/ProductsService";
@@ -7,35 +7,47 @@ import ProductModel from "../../../Models/ProductModel";
 import { NavLink } from "react-router-dom";
 
 
-function ProductDeatils(): JSX.Element {
+function ProductDeatils(): JSX.Element{
 
     const params = useParams()
-    
+    const navigate = useNavigate()
     const [product , setProduct] = useState<ProductModel>()
     
     useEffect(()=>{
         const prodId = +params.prodId
         productService.getOneProductById(prodId)
-        .then(p => setProduct(p))
-        .catch(err => alert(err.message))
-       })
+            .then(p => setProduct(p))
+            .catch(err => navigate("/products"))
+       } , [])
+
+
+    function deleteProduct(){
+        productService.deleteProduct(product.id)
+            .then(()=> {
+                alert(product.name + "has been delited !");
+                navigate("/products");
+            })
+            .catch(err => alert(err.message))
+        }
+
+
 
     return (
-        <div className="ProductDeatils">
+        <div className="ProductDeatils Box">
             { product && <div >
 			<div className="card">
                 <img src={config.productImagesUrl + product.imageName} className="card-img-top" alt="..."/>
                     <div className="card-body">
-                        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p className="card-text">{product.name}</p>
+                        <p className="card-text">{product.price}</p>
+                        <p className="card-text">stock:{product.stock}</p>
                     </div>
-                    <NavLink to = '/products' >
-                        <button>BACK</button>
-                    </NavLink>
+                    <NavLink to = '/products' ><button>BACK</button></NavLink>
+                    <NavLink to = {'/products/edit/'+product.id}><button>EDIT</button></NavLink>
+                    <button className="btn btn-danger" onClick = {deleteProduct}>DELETE</button>
                 </div>
-            </div>
-            }
+            </div>} 
         </div>
-    );
+    )
 }
-
 export default ProductDeatils;
