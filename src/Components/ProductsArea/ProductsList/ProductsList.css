@@ -1,9 +1,6 @@
-.ProductsList > a {
-	text-decoration: none;
+.ProductsList>a {
+    text-decoration: none;
     position: absolute;
-    top: 110px ;
-    left: 700px;
-    margin: 0px;
-    padding: 0px;
-    z-index: 1;
+    top: 100px;
+    right: 20px;
 }

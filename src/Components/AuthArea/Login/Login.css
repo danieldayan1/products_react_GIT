@@ -1,19 +1,19 @@
-.AddProduct>form {
+.Login>form {
     width: 350px;
 }
 
-.AddProduct>h2 {
+.Login>h2 {
     text-align: center;
 }
 
-.AddProduct input,
-.AddProduct button {
+.Login input,
+.Login button {
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
 
-.AddProduct span {
+.Login span {
     color: red;
     /* margin: 0 20px; */
     /* position: absolute; */

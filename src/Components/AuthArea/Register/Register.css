@@ -1,19 +1,19 @@
-.AddProduct>form {
+.Register>form {
     width: 350px;
 }
 
-.AddProduct>h2 {
+.Register>h2 {
     text-align: center;
 }
 
-.AddProduct input,
-.AddProduct button {
+.Register input,
+.Register button {
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 20px;
 }
 
-.AddProduct span {
+.Register span {
     color: red;
     /* margin: 0 20px; */
     /* position: absolute; */

@@ -1,24 +1,26 @@
+import { useEffect, useState } from "react";
 import "./Clock.css";
-import {useState , useEffect} from "react"
 
 function Clock(): JSX.Element {
 
-    const [now , setNow] = useState<string>()
+    const [now, setNow] = useState<string>();
 
-    useEffect(()=>{
-       const intervalID =  setInterval(() => {
+    useEffect(() => {
+        const intervalId = setInterval(() => {
             let time = new Date();
+            // now = time.toLocaleTimeString(); 
             setNow(time.toLocaleTimeString());
-            console.log(now);
-        } , 1000);
+            console.log(time.toLocaleTimeString());
+        }, 1000);
 
-        return() => clearInterval(intervalID)
-    })
+        return () => clearInterval(intervalId)
+
+    }, [])
 
 
     return (
-        <div className="Clock"  >
-			<p>{now}</p>
+        <div className="Clock Box">
+            {now}
         </div>
     );
 }

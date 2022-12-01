@@ -1,20 +1,20 @@
-.layout {
-	height: 100%;
-    box-sizing: border-box;
+.Layout {
+    height: 100%;
+    box-sizing: border-box; /* Real with and height */
     display: grid;
     grid-template-rows: 15% 80% 5%;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(6, 1fr); /* fr = Fraction = יחידת מידה אחת */
 }
 
-.layout > header , .layout > footer{
-    grid-column: span 6;
+.Layout > header, .Layout > footer {
+    grid-column: span 6; /* span = מתפרש */
 }
 
-.layout > main{
+.Layout > main {
     grid-column: span 5;
     overflow: auto;
 }
 
-.layout ,  .layout > *{
-    border: 1px solid black 
+.Layout, .Layout > * {
+    border: 1px solid black;
 }

@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react";
-import ProductModel from "../../../Models/ProductModel";
-import { productsStore } from "../../../redux/ProductsState";
+import { productsStore } from "../../../Redux/ProductsState";
 import "./TotalProducts.css";
 
 function TotalProducts(): JSX.Element {
 
-    const [count , setCount] = useState<number>(0)
+    const [count, setCount] = useState<number>(0);
 
-    useEffect(()=>{
-        setCount(productsStore.getState().products.length);
-       const unsubscribe =  productsStore.subscribe(()=> setCount(productsStore.getState().products.length)); // listen to changes and calculate
+    useEffect(() => {
+        //Take products length when our site is up
+        setCount(productsStore.getState().products.length)
 
-       return ()=>{
-        unsubscribe();
-       }
-    },[])
+        const unsubscribe = productsStore.subscribe(() => { //listen to any changes, and invoke the callback when something changed
+            setCount(productsStore.getState().products.length)
+        })
+
+        return () => {
+            unsubscribe();
+        }
+
+    }, [])
 
 
     return (
         <div className="TotalProducts">
-			<span>total products is: {count}</span>
+            <span>Total Products: {count}</span>
         </div>
     );
 }

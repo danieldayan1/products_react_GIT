@@ -1,12 +1,14 @@
-import "./Home.css";
 import Clock from "../Clock/Clock";
 import Sales from "../Sales/Sales";
 
-function Home(): JSX.Element{ 
+import "./Home.css";
+
+function Home(): JSX.Element {
+
     return (
         <div className="Home">
-            <Clock />
-            <Sales/>
+            {/* <Clock /> */}
+            <Sales />
         </div>
     );
 }
