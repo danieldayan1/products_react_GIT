@@ -36,7 +36,6 @@ function EditProduct(): JSX.Element {
 
     return (
         <div className="EditProduct Box">
-
             <h2>Edit Product</h2>
             <form onSubmit={handleSubmit(send)}>
                 <div className="form-floating mb-3">

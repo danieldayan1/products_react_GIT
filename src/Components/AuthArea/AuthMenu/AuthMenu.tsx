@@ -25,8 +25,9 @@ function AuthMenu(): JSX.Element {
     return (
         <div className="AuthMenu">
             {!user && <><span>Welcome | </span>
-                <NavLink to="/login">Login  </NavLink>
-                <NavLink to="/Register">Register</NavLink>
+               <NavLink to="/login">Login  </NavLink>
+                |
+                <NavLink to="/Register">  Register</NavLink>
 
             </>}
             {

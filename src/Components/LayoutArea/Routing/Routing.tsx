@@ -7,6 +7,8 @@ import AddProduct from "../../ProductsArea/AddProduct/AddProduct";
 import EditProduct from "../../ProductsArea/EditProduct/EditProduct";
 import ProductDetails from "../../ProductsArea/ProductDetails/ProductDetails";
 import ProductsList from "../../ProductsArea/ProductsList/ProductsList";
+import ProdCountersList from "../../ShopArea/ProdCountersList/ProdCountersList";
+import ShopSummary from "../../ShopArea/ShopSummary/ShopSummary";
 import NotFound404 from "../NotFound404/NotFound404";
 
 
@@ -24,6 +26,8 @@ function Routing(): JSX.Element {
                 <Route path="/login" element={<Login />}></Route>
                 <Route path="/logout" element={<Logout />}></Route>
                 <Route path="/*" element={<NotFound404 />}></Route>
+                <Route path="/shop" element={<ProdCountersList />}></Route>
+                <Route path="/shop/summary" element={<ShopSummary />}></Route>
             </Routes>
         </div>
     );

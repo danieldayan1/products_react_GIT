@@ -9,7 +9,6 @@ class AuthService {
     public async register(user: UserModel): Promise<void> {
 
         const response = await axios.post<string>(config.registerUrl, user);
-
         const token = response.data;
         console.log(token);
         authStore.dispatch({ type: AuthActionType.Register, payload: token })

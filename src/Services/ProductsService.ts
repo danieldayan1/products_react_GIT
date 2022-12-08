@@ -53,7 +53,7 @@ class ProductsService {
 
     public async editProduct(product: ProductModel): Promise<ProductModel> {
         const formData = new FormData();
-
+    
         formData.append("name", product.name)
         formData.append("price", product.price.toString())
         formData.append("stock", product.stock.toString())
@@ -63,6 +63,7 @@ class ProductsService {
         const response = await axios.put<ProductModel>(config.productsUrl + product.id, formData)
         const editedProduct = response.data;
         productsStore.dispatch({ type: ProductsActionType.EditProduct, payload: editedProduct })
+       
         return editedProduct;
     }
 

@@ -6,9 +6,11 @@ function TotalProducts(): JSX.Element {
 
     const [count, setCount] = useState<number>(0);
 
+
     useEffect(() => {
         //Take products length when our site is up
-        setCount(productsStore.getState().products.length)
+        setCount(productsStore.getState().products.length);
+        
 
         const unsubscribe = productsStore.subscribe(() => { //listen to any changes, and invoke the callback when something changed
             setCount(productsStore.getState().products.length)

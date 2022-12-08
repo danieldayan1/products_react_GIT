@@ -23,7 +23,7 @@ function AddProduct(): JSX.Element {
 
     return (
         <div className="AddProduct Box">
-
+    
             <h2>Add Product</h2>
             <form onSubmit={handleSubmit(send)}>
                 <div className="form-floating mb-3">

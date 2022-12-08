@@ -1,5 +1,6 @@
-.AuthMenu {
+.Clock {
     position: absolute;
-    right: 200px;
+    left: 10px;
     top: 20px;
 }
+
